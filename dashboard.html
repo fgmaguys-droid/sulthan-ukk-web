@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dashboard User</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+
+        body{
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        /* TEXT BERJALAN */
+        .running-text{
+            background-color: #000f83;
+            color: white;
+            padding: 5px 0;
+            font-weight: bold;
+        }
+
+        /* HERO */
+        .hero-section{
+            background: linear-gradient(to right, orange, rgb(255, 187, 0));
+            color: white;
+            padding: 80px 0;
+        }
+
+        /* CARD STATISTIK */
+        .stats-card{
+            border: none;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .stats-card:hover{
+            transform: translateY(-8px);
+        }
+
+        /* CARD PAKET */
+        .card-paket{
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card-paket:hover{
+            transform: scale(1.03);
+        }
+
+        .card-paket img{
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* BOOKING */
+        .booking-card{
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        /* FOOTER */
+        footer{
+            margin-top: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- TEXT BERJALAN -->
+<div class="running-text">
+
+    <marquee behavior="scroll"
+             direction="left"
+             scrollamount="6">
+
+        🎉 Selamat Datang di JOGLO WISATA • 
+        Liburan Seru ke Bali • Bandung • Bromo • Jogja • 
+        Promo Paket Wisata Terbaik Menanti Anda 🌴✈️
+
+    </marquee>
+
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+            JOGLO WISATA
+        </a>
+
+        <div class="navbar-nav ms-auto">
+
+            <a class="nav-link text-white" href="#">
+                Dashboard
+            </a>
+
+            <a href="index.html"
+               class="btn btn-danger ms-3">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+
+    <div class="container text-center">
+
+        <h1 class="fw-bold display-5">
+            Selamat Datang User
+        </h1>
+
+        <p class="fs-5">
+            Anda berhasil login ke Dashboard Wisata
+        </p>
+
+    </div>
+
+</section>
+
+<!-- STATISTIK -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- PENGUNJUNG -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card stats-card shadow text-center bg-primary text-white">
+
+                    <div class="card-body">
+
+                        <h1 class="fw-bold">
+                            120
+                        </h1>
+
+                        <p class="mb-0">
+                            Total Pengunjung
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PAKET -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card stats-card shadow text-center bg-success text-white">
+
+                    <div class="card-body">
+
+                        <h1 class="fw-bold">
+                            15
+                        </h1>
+
+                        <p class="mb-0">
+                            Paket Wisata
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- JADWAL -->
+            <div class="col-md-4 mb-4">
+
+                <div class="card stats-card shadow text-center bg-danger text-white">
+
+                    <div class="card-body">
+
+                        <h1 class="fw-bold">
+                            45
+                        </h1>
+
+                        <p class="mb-0">
+                            Jadwal Keberangkatan
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PAKET WISATA -->
+<section id="paket" class="py-5 bg-warning">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-5">
+            Daftar Paket Wisata
+        </h2>
+
+        <div class="row">
+
+            <!-- BALI -->
+            <div class="col-md-3 mb-4">
+
+                <div class="card card-paket shadow">
+
+                    <img src="assets/Paket-Wisata-Bali.jpg"
+                         class="card-img-top">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="fw-bold">
+                            Paket Bali
+                        </h5>
+
+                        <p>
+                            Nikmati keindahan pantai Bali
+                        </p>
+
+                        <button class="btn btn-success w-100"
+                                onclick="bookingWisata('Bali')">
+
+                            Pilih Wisata
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BANDUNG -->
+            <div class="col-md-3 mb-4">
+
+                <div class="card card-paket shadow">
+
+                    <img src="assets/Paket-Wisata-Bandung.jpg"
+                         class="card-img-top">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="fw-bold">
+                            Paket Bandung
+                        </h5>
+
+                        <p>
+                            Wisata alam dan kuliner Bandung
+                        </p>
+
+                        <button class="btn btn-success w-100"
+                                onclick="bookingWisata('Bandung')">
+
+                            Pilih Wisata
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BROMO -->
+            <div class="col-md-3 mb-4">
+
+                <div class="card card-paket shadow">
+
+                    <img src="assets/Paket-Wisata-Bromo.jpg"
+                         class="card-img-top">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="fw-bold">
+                            Paket Bromo
+                        </h5>
+
+                        <p>
+                            Melihat sunrise Gunung Bromo
+                        </p>
+
+                        <button class="btn btn-success w-100"
+                                onclick="bookingWisata('Bromo')">
+
+                            Pilih Wisata
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- JOGJA -->
+            <div class="col-md-3 mb-4">
+
+                <div class="card card-paket shadow">
+
+                    <img src="assets/Paket-Wisata-Jogja.jpg"
+                         class="card-img-top">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="fw-bold">
+                            Paket Jogja
+                        </h5>
+
+                        <p>
+                            Wisata budaya dan sejarah Jogja
+                        </p>
+
+                        <button class="btn btn-success w-100"
+                                onclick="bookingWisata('Jogja')">
+
+                            Pilih Wisata
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOOKING -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="card booking-card shadow border-0">
+
+            <div class="card-header bg-success text-white text-center py-3">
+
+                <h3 class="mb-0">
+                    Tiket Berhasil Dipesan
+                </h3>
+
+            </div>
+
+            <div class="card-body p-4">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <p>
+                            <strong>Nama Pemesan :</strong>
+                            Andi
+                        </p>
+
+                        <p>
+                            <strong>Destinasi :</strong>
+                            Bali
+                        </p>
+
+                        <p>
+                            <strong>Jumlah Orang :</strong>
+                            4 Orang
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <p>
+                            <strong>Tanggal :</strong>
+                            10 Juni 2026
+                        </p>
+
+                        <p>
+                            <strong>Jam :</strong>
+                            08:00 WIB
+                        </p>
+
+                        <p>
+                            <strong>Status :</strong>
+
+                            <span class="badge bg-success">
+                                Berhasil
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-4">
+
+    <p class="mb-0">
+        &copy; 2026 Joglo Wisata | Sulthan Arkan Baihaqi
+    </p>
+
+</footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+function bookingWisata(namaWisata){
+
+    alert("Booking wisata " + namaWisata + " berhasil!");
+
+}
+
+</script>
+
+</body>
+</html>
